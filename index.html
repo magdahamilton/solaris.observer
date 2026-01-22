@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLARIS STATION :: SYSTEM CALIBRATION</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Solaris Observatory - A sentient ocean planet simulation inspired by Stanisław Lem's novel. System calibration in progress. Expected operational Q1 2026.">
+    <meta name="keywords" content="Solaris, ocean simulation, Stanisław Lem, WebGL, Three.js, interactive simulation">
+    <meta name="author" content="Magdalena Hamilton">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solaris.observer/">
+    <meta property="og:title" content="SOLARIS STATION :: Planetary Observation Facility">
+    <meta property="og:description" content="A sentient ocean planet simulation inspired by Stanisław Lem's Solaris. System calibration in progress. Expected operational Q1 2026.">
+    <meta property="og:image" content="https://solaris.observer/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://solaris.observer/">
+    <meta property="twitter:title" content="SOLARIS STATION :: Planetary Observation Facility">
+    <meta property="twitter:description" content="A sentient ocean planet simulation inspired by Stanisław Lem's Solaris. System calibration in progress. Expected operational Q1 2026.">
+    <meta property="twitter:image" content="https://solaris.observer/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mission-control">
+        <div class="header">
+            <div class="header-top">
+                <span>SPACE RESEARCH COUNCIL :: PLANETARY OBSERVATION DIVISION</span>
+                <span>SYSTEM INITIALIZATION</span>
+            </div>
+            <div class="header-main">
+                <div class="header-left">
+                    <span class="cursor-blink">█</span>
+                    <span>STN-SOLARIS-ALPHA :: CALIBRATION MODE</span>
+                </div>
+                <div class="header-right">
+                    <span class="status-indicator">
+                        <span class="status-box"></span>
+                        <span>STANDBY</span>
+                    </span>
+                    <span id="station-time">-- HRS</span>
+                    <span class="status-indicator">
+                        <span class="status-box"></span>
+                        <span>PREP</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-display">
+            <div class="coming-soon-content">
+                <div class="station-code">STN-ALPHA-001</div>
+                <div class="main-title">SOLARIS</div>
+                
+                <div class="subtitle">
+                    PLANETARY OBSERVATION FACILITY
+                </div>
+                
+                <div class="coordinates">
+                    COORDINATES: 47°14'N 19°03'E :: ORBIT ALT: 350KM :: PERIOD: 94.2MIN
+                </div>
+                
+                <div class="expected-date">
+                    EXPECTED OPERATIONAL: Q1 2026
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="system-info">
+                LOCATION: SOLARIS ORBIT :: STATUS: CALIBRATION :: SYSTEMS: INITIALIZING :: POWER: 100%
+            </div>
+            <div class="footer-right">
+                <button class="info-icon" onclick="showCredits()">[i]</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="credits-overlay" class="credits-overlay" onclick="hideCredits()">
+        <div class="credits-content" onclick="event.stopPropagation()">
+            <pre class="credits-text">
+═══════════════════════════════════════════════════════
+       SOLARIS STATION :: SYSTEM INFORMATION
+═══════════════════════════════════════════════════════
+
+STATION COMMANDER ............... DR. M. HAMILTON
+OBSERVATION SYSTEMS ............. DR. M. HAMILTON  
+TECHNICAL DEVELOPMENT ........... DR. M. HAMILTON
+SIMULATION ARCHITECTURE ......... DR. M. HAMILTON
+
+CONTACT UPLINK .................. <a href="mailto:hi@magdahamilton.dev">INITIATE TRANSMISSION</a>
+
+COPYRIGHT NOTICE ................ © 2025
+
+═══════════════════════════════════════════════════════
+            [ PRESS ESC OR CLICK TO CLOSE ]
+═══════════════════════════════════════════════════════
+            </pre>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
