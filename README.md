@@ -1,12 +1,12 @@
 # Solaris Observer
 
-A coming soon page for the Solaris planetary observation simulation, inspired by Stanisław Lem's novel *Solaris*.
+A coming soon page for the Solaris.
 
 🔗 **Live Site:** [solaris.observer](https://solaris.observer)
 
 ## About
 
-This is a temporary landing page while the full simulation is under development. The page features a retro CRT terminal aesthetic reminiscent of Soviet-era research stations.
+This is a temporary pre-launch landing page. The page features a retro CRT terminal aesthetic reminiscent of Soviet-era research stations.
 
 Expected launch: **Q1 2026**
 
@@ -28,18 +28,6 @@ Expected launch: **Q1 2026**
 ├── sitemap.xml         # Site map for SEO
 └── CNAME              # Custom domain configuration
 ```
-
-## Local Development
-
-Simply open `index.html` in a browser. No build process required.
-
-## Full Simulation
-
-The complete Solaris ocean simulation (built with Three.js) will be released in Q1 2026. It will feature:
-- Living, gelatinous ocean surface
-- Emergent formations (Symmetriads, Mimoids, Asymmetriads)
-- Gravitational stabilization visualization
-- Interactive observation systems
 
 ## License
 
