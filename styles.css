@@ -420,24 +420,20 @@ body::after {
     }
     .station-code {
         font-size: 0.75em;
-        margin-bottom: 10px;
         letter-spacing: 4px;
     }
     .main-title {
         font-size: 2.5em;
         letter-spacing: 15px;
-        margin-bottom: 8px;
     }
     .subtitle {
         font-size: 0.85em;
         letter-spacing: 5px;
-        margin-bottom: 20px;
         line-height: 1.4;
     }
     .coordinates {
         font-size: 0.7em;
         letter-spacing: 2px;
-        margin-bottom: 30px;
         line-height: 1.6;
         word-spacing: 0.2em;
     }
@@ -474,7 +470,6 @@ body::after {
     .main-title {
         font-size: 2em;
         letter-spacing: 10px;
-        margin-bottom: 5px;
     }
     .subtitle {
         font-size: 0.7em;
