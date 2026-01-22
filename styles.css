@@ -477,6 +477,9 @@ body::after {
     .system-info {
         line-height: 1.5;
     }
+    .hide-mobile {
+        display: none;
+    }
     .credits-content {
         max-width: 90%;
         margin: 0 auto;
