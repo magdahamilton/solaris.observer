@@ -390,6 +390,10 @@ body::after {
     text-shadow: 0 0 15px #FFB000;
 }
 
+.show-mobile {
+    display: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     body {
@@ -468,6 +472,9 @@ body::after {
     }
     .hide-mobile {
         display: none;
+    }
+    .show-mobile {
+        display: inline;
     }
     .credits-content {
         max-width: 90%;
