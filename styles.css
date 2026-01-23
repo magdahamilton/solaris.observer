@@ -397,10 +397,20 @@ body::after {
 /* Responsive */
 @media (max-width: 768px) {
     body {
-        overflow: auto;
+        overflow: hidden;
+        height: 100vh;
     }
+    
+    .mission-control {
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+        transform: scale(1) rotateX(0deg);
+    }
+    
     .header { 
-        padding: 8px 15px;
+        padding: 6px 12px;
+        flex-shrink: 0;
     }
     .header-top { 
         display: none;
@@ -413,8 +423,8 @@ body::after {
         display: none;
     }
     .header-right { 
-        font-size: 10px; 
-        gap: 15px;
+        font-size: 9px; 
+        gap: 12px;
         flex-wrap: nowrap;
     }
     .status-box {
@@ -422,38 +432,46 @@ body::after {
         height: 8px;
     }
     .main-display { 
-        margin: 10px; 
-        padding: 20px 15px; 
-        border-width: 3px; 
+        margin: 8px; 
+        padding: 15px 10px; 
+        border-width: 3px;
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
     }
     .coming-soon-content {
         width: 100%;
         padding: 0 5px;
     }
     .station-code {
-        font-size: 0.75em;
-        letter-spacing: 4px;
+        font-size: 0.7em;
+        letter-spacing: 3px;
+        margin-bottom: 6px;
     }
     .main-title {
-        font-size: 2.5em;
-        letter-spacing: 15px;
+        font-size: 2.2em;
+        letter-spacing: 12px;
+        margin-bottom: 8px;
     }
     .subtitle {
-        font-size: 0.85em;
-        letter-spacing: 5px;
+        font-size: 0.75em;
+        letter-spacing: 4px;
         line-height: 1.4;
+        margin-bottom: 10px;
     }
     .coordinates {
-        font-size: 0.7em;
+        font-size: 0.65em;
         letter-spacing: 2px;
-        line-height: 1.6;
+        line-height: 1.5;
         word-spacing: 0.2em;
+        margin-bottom: 12px;
     }
     .expected-date {
-        font-size: 0.75em;
+        font-size: 0.7em;
         letter-spacing: 3px;
         line-height: 1.5;
         word-spacing: normal;
+        margin-bottom: 10px;
     }
     .footer { 
         flex-direction: row; 
@@ -461,7 +479,8 @@ body::after {
         align-items: center;
         justify-content: space-between; 
         font-size: 8px;
-        padding: 8px 15px;
+        padding: 6px 12px;
+        flex-shrink: 0;
     }
     .footer-right { 
         flex-shrink: 0;
@@ -491,7 +510,7 @@ body::after {
 
 @media (max-width: 480px) {
     .header { 
-        padding: 6px 12px; 
+        padding: 5px 10px; 
     }
     .header-top { 
         display: none;
@@ -504,32 +523,41 @@ body::after {
         display: none;
     }
     .header-right {
-        font-size: 9px;
-        gap: 12px;
+        font-size: 8px;
+        gap: 10px;
     }
     .main-display { 
-        margin: 8px; 
-        padding: 15px 10px; 
+        margin: 6px; 
+        padding: 12px 8px; 
     }
-    .main-title {
-        font-size: 2em;
-        letter-spacing: 10px;
-    }
-    .subtitle {
-        font-size: 0.7em;
-        letter-spacing: 2px;
-    }
-    .coordinates {
-        font-size: 0.6em;
-        letter-spacing: 1px;
-    }
-    .expected-date {
+    .station-code {
         font-size: 0.65em;
         letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
+    .main-title {
+        font-size: 1.9em;
+        letter-spacing: 10px;
+        margin-bottom: 6px;
+    }
+    .subtitle {
+        font-size: 0.65em;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
+    }
+    .coordinates {
+        font-size: 0.58em;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+    .expected-date {
+        font-size: 0.62em;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
     }
     .footer { 
         font-size: 7px;
-        padding: 6px 12px;
+        padding: 5px 10px;
         gap: 6px;
     }
     .credits-text {
