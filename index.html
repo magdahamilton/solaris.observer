@@ -35,35 +35,44 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebApplication",
+      "@id": "https://solaris.observer/#creativework",
+      "name": "Solaris",
+      "url": "https://solaris.observer",
+      "description": "An interactive WebGL meditation on consciousness and the unknowable, inspired by Stanisław Lem's novel.",
+      "applicationCategory": "Interactive Art",
+      "operatingSystem": "Web Browser",
+      "browserRequirements": "Requires WebGL support",
+      "datePublished": "2025-01-22",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://magdahamilton.dev/#person"
+      },
+      "publisher": {
+        "@id": "https://velvetdisruption.com/#organization"
+      },
+      "isBasedOn": {
+        "@type": "Book",
+        "name": "Solaris",
+        "author": {
+          "@type": "Person",
+          "name": "Stanisław Lem"
+        },
+        "datePublished": "1961"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://solaris.observer/#website"
+      }
+    },
+    {
       "@type": "WebSite",
       "@id": "https://solaris.observer/#website",
       "name": "Solaris Observer",
       "url": "https://solaris.observer",
-      "description": "An interactive ocean simulation inspired by Stanisław Lem's Solaris. A meditation on consciousness and the unknowable.",
-      "author": {
-        "@id": "https://magdahamilton.dev/#person"
+      "about": {
+        "@id": "https://solaris.observer/#creativework"
       },
-      "creator": {
-        "@id": "https://magdahamilton.dev/#person"
-      },
-      "datePublished": "2025-01-22",
-      "inLanguage": "en"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://solaris.observer/#application",
-      "name": "Solaris",
-      "url": "https://solaris.observer",
-      "description": "An interactive meditation on consciousness and the unknowable, inspired by Stanisław Lem's novel.",
-      "applicationCategory": "Creative",
-      "operatingSystem": "Web Browser",
-      "author": {
-        "@id": "https://magdahamilton.dev/#person"
-      },
-      "creator": {
-        "@id": "https://magdahamilton.dev/#person"
-      },
-      "sourceOrganization": {
+      "publisher": {
         "@id": "https://velvetdisruption.com/#organization"
       }
     },
@@ -84,7 +93,10 @@
       "@type": "Organization",
       "@id": "https://velvetdisruption.com/#organization",
       "name": "Velvet Disruption",
-      "url": "https://velvetdisruption.com"
+      "url": "https://velvetdisruption.com",
+      "sameAs": [
+        "https://github.com/velvet-disruption"
+      ]
     }
   ]
 }
@@ -158,7 +170,7 @@ TECHNICAL DEVELOPMENT ........... DR. M. HAMILTON
 SIMULATION ARCHITECTURE ......... DR. M. HAMILTON
 
 CENTRAL COMMAND ................. <a href="https://magdahamilton.dev">MAGDAHAMILTON.DEV</a>
-CONTACT UPLINK .................. <a href="/cdn-cgi/l/email-protection#e88081a885898f8c8980898581849c8786c68c8d9e">INITIATE TRANSMISSION</a>
+CONTACT UPLINK .................. <a href="mailto:hi@magdahamilton.dev">INITIATE TRANSMISSION</a>
 
 COPYRIGHT NOTICE ................ © 2025
 
