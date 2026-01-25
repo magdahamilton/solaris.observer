@@ -325,6 +325,35 @@ body::after {
     box-shadow: 0 0 10px rgba(255, 176, 0, 0.3);
 }
 
+.vd-logo-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 176, 0, 0.3);
+    padding: 4px 8px;
+    background: none;
+    text-decoration: none;
+}
+
+.vd-logo-link:hover {
+    opacity: 1;
+    border-color: #FFB000;
+    box-shadow: 0 0 10px rgba(255, 176, 0, 0.3);
+}
+
+.vd-logo-link:hover .vd-logo {
+    filter: drop-shadow(0 0 6px rgba(255, 176, 0, 0.5));
+}
+
+.vd-logo {
+    width: 16px;
+    height: 13px;
+    display: block;
+    transition: filter 0.3s;
+}
+
 .credits-overlay {
     position: fixed;
     top: 0;
@@ -503,7 +532,14 @@ body::after {
     }
     .footer-right { 
         flex-shrink: 0;
-        gap: 4px;
+        gap: 8px;
+    }
+    .vd-logo {
+        width: 14px;
+        height: 11px;
+    }
+    .vd-logo-link {
+        padding: 3px 6px;
     }
     .system-info {
         line-height: 1.4;
