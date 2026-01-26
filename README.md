@@ -2,6 +2,8 @@
 
 A coming soon page for the Solaris.
 
+![Solaris terminal screenshot](images/screenshot.jpg)
+
 🔗 **Live Site:** [solaris.observer](https://solaris.observer)
 
 ## About
