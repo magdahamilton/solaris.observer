@@ -20,7 +20,6 @@ Expected launch: **Q1 2026**
 - Custom domain via Cloudflare
 
 ## Project Structure
-
 ```
 .
 ├── index.html          # Main page
@@ -28,7 +27,9 @@ Expected launch: **Q1 2026**
 ├── script.js           # Typewriter effect & time updates
 ├── robots.txt          # Search engine directives
 ├── sitemap.xml         # Site map for SEO
-└── CNAME              # Custom domain configuration
+├── CNAME               # Custom domain configuration
+└── images/             # Screenshots and images
+    └── screenshot.jpg  # Terminal screenshot for README
 ```
 
 ## License
