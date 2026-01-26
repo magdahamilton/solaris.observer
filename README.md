@@ -1,6 +1,6 @@
 # Solaris Observer
 
-A coming soon page for the Solaris.
+A coming soon page for Solaris.
 
 ![Solaris terminal screenshot](images/screenshot.jpg)
 
