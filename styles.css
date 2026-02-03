@@ -441,6 +441,77 @@ body::after {
     text-align: center;
 }
 
+/* Modal elements */
+.modal-divider {
+    border-top: 2px solid #FFB000;
+    margin: 12px 0;
+    opacity: 0.6;
+}
+
+.modal-title {
+    color: #FFB000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(11px, 2.5vw, 14px);
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 8px 0;
+}
+
+.modal-subtitle {
+    color: #FFB000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(9px, 2vw, 11px);
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    line-height: 1.5;
+}
+
+.modal-note {
+    color: #FFB000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(8px, 1.8vw, 10px);
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 15px 10px 5px;
+    opacity: 0.8;
+}
+
+.modal-close-hint {
+    color: #FFB000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(8px, 1.8vw, 10px);
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 8px 0;
+    opacity: 0.7;
+}
+
+.credits-body {
+    text-align: left;
+    padding: 10px 15px;
+    font-size: clamp(9px, 2vw, 12px);
+    line-height: 1.6;
+}
+
+.success-icon {
+    color: #FFB000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(12px, 2.5vw, 16px);
+    text-align: center;
+    padding: 15px 0;
+    letter-spacing: 2px;
+}
+
+.success-text {
+    color: #FFB000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(9px, 2vw, 11px);
+    text-align: center;
+    padding: 5px 15px;
+    line-height: 1.5;
+}
+
 .uplink-form {
     padding: 0 40px;
     position: relative;
@@ -586,6 +657,23 @@ body::after {
     display: none;
 }
 
+.mobile-modal {
+    display: none;
+}
+
+.mobile-credits-body {
+    color: #FFB000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-align: center;
+    padding: 10px 15px;
+    line-height: 1.8;
+}
+
+.mobile-credits-body a {
+    color: #FFB000;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     body {
@@ -706,10 +794,13 @@ body::after {
         line-height: 1.4;
     }
     .hide-mobile {
-        display: none;
+        display: none !important;
     }
     .show-mobile {
         display: inline;
+    }
+    .mobile-modal {
+        display: block;
     }
     
     /* Priority alert button mobile */
@@ -718,15 +809,22 @@ body::after {
         margin-top: 10px;
     }
     .credits-content {
-        max-width: 90%;
+        max-width: 95%;
         margin: 0 auto;
     }
     .credits-text {
         font-size: 9px;
         padding: 20px 12px;
         white-space: pre-wrap;
-        word-break: break-word;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
         line-height: 1.6;
+        overflow-x: hidden;
+    }
+    
+    /* Hide the long divider lines on mobile */
+    .credits-text {
+        font-size: 10px;
     }
     
     /* Uplink mobile styles */
@@ -738,14 +836,14 @@ body::after {
         gap: 8px;
     }
     .uplink-label {
-        font-size: 9px;
+        font-size: 10px;
         text-align: center;
     }
     .uplink-input {
         width: 100%;
         min-width: unset;
-        font-size: 11px;
-        padding: 6px 10px;
+        font-size: 12px;
+        padding: 8px 10px;
     }
     .uplink-submit {
         font-size: 10px;
