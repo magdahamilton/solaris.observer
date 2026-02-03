@@ -184,6 +184,10 @@
                 <div class="expected-date">
                     EXPECTED OPERATIONAL: Q1 2026
                 </div>
+                
+                <button class="priority-alert-btn" onclick="showUplink()">
+                    <span class="btn-arrow">▶</span>REGISTER FOR PRIORITY ALERT
+                </button>
             </div>
         </div>
         
@@ -203,12 +207,13 @@
         </div>
     </div>
     
+    <!-- Credits Overlay -->
     <div id="credits-overlay" class="credits-overlay" onclick="hideCredits()">
         <div class="credits-content" onclick="event.stopPropagation()">
             <pre class="credits-text">
-═══════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════
        SOLARIS STATION :: SYSTEM INFORMATION
-═══════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════
 
 STATION COMMANDER ............... DR. M. HAMILTON
 OBSERVATION SYSTEMS ............. DR. M. HAMILTON  
@@ -217,14 +222,64 @@ SIMULATION ARCHITECTURE ......... DR. M. HAMILTON
 
 CENTRAL COMMAND ................. <a href="https://magdahamilton.dev">MAGDAHAMILTON.DEV</a>
 RESEARCH CONSORTIUM ............. <a href="https://velvetdisruption.com">VELVETDISRUPTION.COM</a>
-CONTACT UPLINK .................. <a href="/cdn-cgi/l/email-protection#0c64654c616d6b686d646d6165607863622268697a">INITIATE TRANSMISSION</a>
+CONTACT UPLINK .................. <a href="/cdn-cgi/l/email-protection#a9c1c0e9c4c8cecdc8c1c8c4c0c5ddc6c787cdccdf">INITIATE TRANSMISSION</a>
 
 COPYRIGHT NOTICE ................ © 2026
 
-═══════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════
             <span class="hide-mobile">[ PRESS ESC OR CLICK TO CLOSE ]</span><span class="show-mobile">[ TAP ANYWHERE TO CLOSE ]</span>
-═══════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════
             </pre>
+        </div>
+    </div>
+    
+    <!-- Uplink/Email Signup Overlay -->
+    <div id="uplink-overlay" class="credits-overlay" onclick="hideUplink()">
+        <div class="credits-content uplink-content" onclick="event.stopPropagation()">
+            <pre class="credits-text uplink-header">═══════════════════════════════════════════════════════════════
+SOLARIS STATION :: TRANSMISSION REGISTRY
+═══════════════════════════════════════════════════════════════
+
+REGISTER FOR PRIORITY ALERTS WHEN STATION GOES OPERATIONAL</pre>
+            
+            <form 
+                id="uplink-form"
+                class="uplink-form"
+                onsubmit="handleSubmit(event)"
+            >
+                <div class="uplink-input-row">
+                    <label for="bd-email" class="uplink-label">TRANSMISSION ADDRESS:</label>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="bd-email"
+                        class="uplink-input" 
+                        placeholder="ENTER FREQUENCY" 
+                        required
+                        autocomplete="email"
+                    >
+                    <button type="submit" class="uplink-submit">[TRANSMIT]</button>
+                </div>
+            </form>
+            
+            <pre class="credits-text uplink-footer">ENCRYPTION: ENABLED :: FREQUENCY: LOW :: NO SPAM
+
+═══════════════════════════════════════════════════════════════
+<span class="hide-mobile">[ PRESS ESC OR CLICK TO CLOSE ]</span><span class="show-mobile">[ TAP ANYWHERE TO CLOSE ]</span>
+═══════════════════════════════════════════════════════════════</pre>
+            
+            <!-- Success message (hidden by default) -->
+            <div id="uplink-success" class="uplink-success">
+                <pre class="credits-text">═══════════════════════════════════════════════════════════════
+
+██  TRANSMISSION LOGGED  ██
+
+STANDBY FOR CONTACT WHEN STATION GOES OPERATIONAL
+
+YOU WILL BE AMONG THE FIRST TO OBSERVE
+
+═══════════════════════════════════════════════════════════════</pre>
+            </div>
         </div>
     </div>
     

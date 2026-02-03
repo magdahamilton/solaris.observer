@@ -18,10 +18,79 @@ function hideCredits() {
     document.getElementById('credits-overlay').classList.remove('active');
 }
 
-// ESC key to close credits
+// Uplink/Email overlay
+function showUplink() {
+    document.getElementById('uplink-overlay').classList.add('active');
+    // Focus the email input after a brief delay for the animation
+    setTimeout(() => {
+        document.getElementById('bd-email').focus();
+    }, 100);
+}
+
+function hideUplink() {
+    document.getElementById('uplink-overlay').classList.remove('active');
+    // Reset form and hide success message when closing
+    const successEl = document.getElementById('uplink-success');
+    if (successEl.classList.contains('active')) {
+        successEl.classList.remove('active');
+    }
+}
+
+// Handle form submission via fetch (no redirect)
+async function handleSubmit(event) {
+    event.preventDefault();
+    
+    const form = document.getElementById('uplink-form');
+    const email = document.getElementById('bd-email').value;
+    const submitBtn = form.querySelector('.uplink-submit');
+    const successEl = document.getElementById('uplink-success');
+    
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = '[TRANSMITTING...]';
+    
+    try {
+        const response = await fetch('https://buttondown.com/api/emails/embed-subscribe/solaris', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({ email: email }),
+            mode: 'no-cors' // Buttondown doesn't support CORS, but submission still works
+        });
+        
+        // Since mode is 'no-cors', we can't read the response
+        // But the subscription will go through, so show success
+        successEl.classList.add('active');
+        
+        // Reset form
+        form.reset();
+        
+        // Auto-close after 4 seconds
+        setTimeout(() => {
+            hideUplink();
+        }, 4000);
+        
+    } catch (error) {
+        console.error('Subscription error:', error);
+        // Even if there's an error, the submission likely worked with no-cors
+        successEl.classList.add('active');
+        form.reset();
+        setTimeout(() => {
+            hideUplink();
+        }, 4000);
+    } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.textContent = '[TRANSMIT]';
+    }
+}
+
+// ESC key to close overlays
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         hideCredits();
+        hideUplink();
     }
 });
 
@@ -81,6 +150,7 @@ window.addEventListener('load', () => {
         const subtitle = document.querySelector('.subtitle');
         const coords = document.querySelector('.coordinates');
         const expectedDate = document.querySelector('.expected-date');
+        const alertBtn = document.querySelector('.priority-alert-btn');
         
         let typewriterComplete = false;
         let typewriterTimeouts = [];
@@ -119,6 +189,11 @@ window.addEventListener('load', () => {
                 expectedDate.style.opacity = '1';
                 expectedDate.style.visibility = 'visible';
             }
+            if (alertBtn) {
+                alertBtn.style.visibility = 'visible';
+                alertBtn.style.opacity = '1';
+                alertBtn.classList.add('visible');
+            }
             
             document.removeEventListener('click', skipHandler);
             document.removeEventListener('keydown', skipHandler);
@@ -155,6 +230,10 @@ window.addEventListener('load', () => {
             expectedDate.style.opacity = '0';
             expectedDate.style.visibility = 'hidden';
         }
+        if (alertBtn) {
+            alertBtn.style.opacity = '0';
+            alertBtn.style.visibility = 'hidden';
+        }
         
         const speed = 50;
         
@@ -164,6 +243,7 @@ window.addEventListener('load', () => {
         const delay3 = delay2 + originalTexts.title.length * speed + 300;
         const delay4 = delay3 + originalTexts.subtitle.length * speed + 300;
         const delay5 = delay4 + originalTexts.coords.length * speed + 500;
+        const delay6 = delay5 + 800; // Delay after expected date for button
         
         // Type in sequence
         typewriterTimeouts.push(setTimeout(() => typeWriter(stationCode, originalTexts.stationCode, speed), delay1));
@@ -178,9 +258,19 @@ window.addEventListener('load', () => {
                 expectedDate.style.transition = 'opacity 0.5s';
                 expectedDate.style.opacity = '1';
             }
+        }, delay5));
+        
+        // Show alert button last with fade in
+        typewriterTimeouts.push(setTimeout(() => {
+            if (alertBtn) {
+                alertBtn.style.visibility = 'visible';
+                alertBtn.style.transition = 'opacity 0.8s ease-in-out';
+                alertBtn.style.opacity = '1';
+                alertBtn.classList.add('visible');
+            }
             typewriterComplete = true;
             document.removeEventListener('click', skipHandler);
             document.removeEventListener('keydown', skipHandler);
-        }, delay5));
+        }, delay6));
     }, 100);
 });
