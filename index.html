@@ -184,10 +184,6 @@
                 <div class="expected-date">
                     EXPECTED OPERATIONAL: Q1 2026
                 </div>
-                
-                <button class="priority-alert-btn" onclick="showUplink()">
-                    <span class="btn-arrow">▶</span>REGISTER FOR PRIORITY ALERT
-                </button>
             </div>
         </div>
         
@@ -207,12 +203,12 @@
         </div>
     </div>
     
-    <!-- Credits Overlay -->
     <div id="credits-overlay" class="credits-overlay" onclick="hideCredits()">
         <div class="credits-content" onclick="event.stopPropagation()">
-            <pre class="credits-text hide-mobile">═══════════════════════════════════════════════════════════════
-SOLARIS STATION :: SYSTEM INFORMATION
-═══════════════════════════════════════════════════════════════
+            <pre class="credits-text">
+═══════════════════════════════════════════════════════
+       SOLARIS STATION :: SYSTEM INFORMATION
+═══════════════════════════════════════════════════════
 
 STATION COMMANDER ............... DR. M. HAMILTON
 OBSERVATION SYSTEMS ............. DR. M. HAMILTON  
@@ -221,112 +217,14 @@ SIMULATION ARCHITECTURE ......... DR. M. HAMILTON
 
 CENTRAL COMMAND ................. <a href="https://magdahamilton.dev">MAGDAHAMILTON.DEV</a>
 RESEARCH CONSORTIUM ............. <a href="https://velvetdisruption.com">VELVETDISRUPTION.COM</a>
-CONTACT UPLINK .................. <a href="mailto:hi@velvetdisruption.com">INITIATE TRANSMISSION</a>
+CONTACT UPLINK .................. <a href="/cdn-cgi/l/email-protection#0c64654c616d6b686d646d6165607863622268697a">INITIATE TRANSMISSION</a>
 
 COPYRIGHT NOTICE ................ © 2026
 
-═══════════════════════════════════════════════════════════════
-[ PRESS ESC OR CLICK TO CLOSE ]
-═══════════════════════════════════════════════════════════════</pre>
-            
-            <!-- Mobile version -->
-            <div class="show-mobile mobile-modal">
-                <div class="modal-divider"></div>
-                <div class="modal-title">SYSTEM INFORMATION</div>
-                <div class="modal-divider"></div>
-                <div class="mobile-credits-body">
-                    <div>STATION COMMANDER: DR. M. HAMILTON</div>
-                    <div>OBSERVATION SYSTEMS: DR. M. HAMILTON</div>
-                    <div>TECHNICAL DEVELOPMENT: DR. M. HAMILTON</div>
-                    <div>SIMULATION ARCHITECTURE: DR. M. HAMILTON</div>
-                    <br>
-                    <div><a href="https://magdahamilton.dev">MAGDAHAMILTON.DEV</a></div>
-                    <div><a href="https://velvetdisruption.com">VELVETDISRUPTION.COM</a></div>
-                    <div><a href="mailto:hi@velvetdisruption.com">CONTACT UPLINK</a></div>
-                    <br>
-                    <div>© 2026</div>
-                </div>
-                <div class="modal-divider"></div>
-                <div class="modal-close-hint">[ TAP TO CLOSE ]</div>
-                <div class="modal-divider"></div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Uplink/Email Signup Overlay -->
-    <div id="uplink-overlay" class="credits-overlay" onclick="hideUplink()">
-        <div class="credits-content uplink-content" onclick="event.stopPropagation()">
-            <!-- Desktop version -->
-            <pre class="credits-text uplink-header hide-mobile">═══════════════════════════════════════════════════════════════
-SOLARIS STATION :: TRANSMISSION REGISTRY
-═══════════════════════════════════════════════════════════════
-
-REGISTER FOR PRIORITY ALERTS WHEN STATION GOES OPERATIONAL</pre>
-            
-            <!-- Mobile header -->
-            <div class="show-mobile mobile-modal">
-                <div class="modal-divider"></div>
-                <div class="modal-title">TRANSMISSION REGISTRY</div>
-                <div class="modal-divider"></div>
-                <div class="modal-subtitle">REGISTER FOR PRIORITY ALERTS</div>
-            </div>
-            
-            <form 
-                id="uplink-form"
-                class="uplink-form"
-                onsubmit="handleSubmit(event)"
-            >
-                <div class="uplink-input-row">
-                    <label for="bd-email" class="uplink-label">TRANSMISSION ADDRESS:</label>
-                    <input 
-                        type="email" 
-                        name="email" 
-                        id="bd-email"
-                        class="uplink-input" 
-                        placeholder="ENTER FREQUENCY" 
-                        required
-                        autocomplete="email"
-                    >
-                    <button type="submit" class="uplink-submit">[TRANSMIT]</button>
-                </div>
-            </form>
-            
-            <!-- Desktop footer -->
-            <pre class="credits-text uplink-footer hide-mobile">ENCRYPTION: ENABLED :: FREQUENCY: LOW :: NO SPAM
-
-═══════════════════════════════════════════════════════════════
-[ PRESS ESC OR CLICK TO CLOSE ]
-═══════════════════════════════════════════════════════════════</pre>
-            
-            <!-- Mobile footer -->
-            <div class="show-mobile mobile-modal">
-                <div class="modal-note">ENCRYPTION: ENABLED :: NO SPAM</div>
-                <div class="modal-divider"></div>
-                <div class="modal-close-hint">[ TAP TO CLOSE ]</div>
-                <div class="modal-divider"></div>
-            </div>
-            
-            <!-- Success message (hidden by default) -->
-            <div id="uplink-success" class="uplink-success">
-                <pre class="credits-text hide-mobile">═══════════════════════════════════════════════════════════════
-
-██  TRANSMISSION LOGGED  ██
-
-STANDBY FOR CONTACT WHEN STATION GOES OPERATIONAL
-
-YOU WILL BE AMONG THE FIRST TO OBSERVE
-
-═══════════════════════════════════════════════════════════════</pre>
-                
-                <!-- Mobile success -->
-                <div class="show-mobile mobile-modal">
-                    <div class="modal-divider"></div>
-                    <div class="success-icon">██ TRANSMISSION LOGGED ██</div>
-                    <div class="success-text">STANDBY FOR CONTACT</div>
-                    <div class="success-text">YOU WILL BE AMONG THE FIRST</div>
-                    <div class="modal-divider"></div>
-                </div>
-            </div>
+═══════════════════════════════════════════════════════
+            <span class="hide-mobile">[ PRESS ESC OR CLICK TO CLOSE ]</span><span class="show-mobile">[ TAP ANYWHERE TO CLOSE ]</span>
+═══════════════════════════════════════════════════════
+            </pre>
         </div>
     </div>
     
